@@ -22,9 +22,13 @@ employee = destructivelyUpdateEmployeeWithKeyAndValue(employee,"employeename", "
 console.log(employee);
 function deleteFromEmployeeByKey(employee, key){
     const updatedEmployee = {...employee};
-    delete updatedEmployee.employeename
-    updatedEmployee.employeename=key
+    delete updatedEmployee[key]
     return updatedEmployee 
 }
-updatedEmployee=deleteFromEmployeeByKey(updatedEmployee,"Sam")
+updatedEmployee=deleteFromEmployeeByKey(employee,"Sam")
 console.log(updatedEmployee);
+function destructivelyDeleteFromEmployeeByKey(employee, key){
+    delete employee[key]
+    return employee 
+}
+employee=destructivelyDeleteFromEmployeeByKey(employee,"streetAddress")
